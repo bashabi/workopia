@@ -118,6 +118,23 @@ class UserController
             'city' => $city,
             'state' => $state,
         ]);
+
+        redirect('/');
+    }
+
+    /**
+     * Logout user and destroy session
+     * @return void
+     */
+
+    public function logout()
+    {
+        Session::clearAll();
+
+        //destroy cookie
+        $params = session_get_cookie_params();
+        setcookie('PHPSESSID', '', time() - 86400, $params['path'], $params['domain']);
+
         redirect('/');
     }
 }
