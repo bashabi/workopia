@@ -46,13 +46,15 @@ function loadView($name, $data = [])
  * 
  */
 
-function loadPartials($name)
+function loadPartials($name, $data = [])
 {
     //require basePath("views/partials/{$name}.php");
 
     $partialPath = basePath("App/views/partials/{$name}.php");
 
     if (file_exists($partialPath)) {
+
+        extract($data);
 
         require $partialPath;
     } else {
