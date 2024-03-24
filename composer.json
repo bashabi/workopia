@@ -1,0 +1,16 @@
+{
+    "name" : "bashabi/workopia-php",
+    "description" : "Job Listing autoload",
+    "authors" : [
+        {
+            "name" : "Bashabi Sarker",
+            "email" : "bashabi@themonsoon.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
